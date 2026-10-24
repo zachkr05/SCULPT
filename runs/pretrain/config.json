@@ -1,0 +1,46 @@
+{
+  "args": {
+    "steps": 100000,
+    "batch_size": 16,
+    "workers": 4,
+    "lr": 0.0001,
+    "weight_decay": 0.0001,
+    "warmup": 1000,
+    "grad_clip": 1.0,
+    "ema_decay": 0.999,
+    "diffusion_steps": 1000,
+    "sample_steps": 50,
+    "eval_every": 1000,
+    "val_scenes": 64,
+    "log_every": 100,
+    "seed": 42,
+    "dim": 384,
+    "depth": 12,
+    "heads": 6,
+    "device": "auto",
+    "no_amp": false,
+    "no_previews": false,
+    "cpu_threads": 4,
+    "output": "/home/zach/SCULPT/runs/pretrain",
+    "resume": null
+  },
+  "model_config": {
+    "grid_size": [
+      128,
+      128
+    ],
+    "max_horizon": 300,
+    "dim": 384,
+    "depth": 12,
+    "heads": 6
+  },
+  "diffusion": {
+    "steps": 1000,
+    "schedule": "cosine",
+    "s": 0.008,
+    "beta_max": 0.999,
+    "prediction_type": "epsilon"
+  },
+  "normalization": "normalized_xy = 2 * xy / 127 - 1",
+  "conditioning": null
+}
